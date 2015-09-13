@@ -1,0 +1,28 @@
+{
+  "name": "angular-d3-miso",
+  "version": "0.0.0",
+  "authors": [
+    "Ava Collins"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-aria": "~1.4.5",
+    "angular-bootstrap": "~0.13.1",
+    "bootstrap-sass-official": "~3.3.4",
+    "d3": "~3.5.5",
+    "d3.chart": "~0.2.1",
+    "fontawesome": "~4.3.0",
+    "ng-resize": "~1.1.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.3"
+  }
+}

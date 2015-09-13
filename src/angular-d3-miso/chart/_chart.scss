@@ -1,0 +1,29 @@
+@import '../header/header';
+@import '../horizontal-bar/horizontal-bar';
+
+.d3-chart {
+  display: block;
+  border:solid 1px $black;
+  padding: 0 5px;
+}
+
+svg .red {
+  fill: $red;
+  stroke: $red;
+}
+svg .orange {
+  fill: $orange;
+  stroke: $orange;
+}
+svg .yellow {
+  fill: $yellow;
+  stroke: $yellow;
+}
+svg .green {
+  fill: $green-hi;
+  stroke: $green-hi;
+}
+svg .blue{
+  fill: $blue;
+  stroke: $blue;
+}

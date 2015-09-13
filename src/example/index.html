@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Analytics dashboard application.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular D3 miso</title>
+
+  <!-- bower:css -->
+  <!-- endbower -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+
+  <!-- inject:css -->
+  <!-- endinject -->
+
+</head>
+
+
+<body ng-app="angular-d3-miso-demo">
+  <!-- bower:js -->
+  <!-- endbower -->
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <article ng-controller="ExampleController as ctrl" class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <d3-chart id="top-10-people" config="ctrl.people">
+          <chart-header></chart-header>
+          <horizontal-bar></horizontal-bar>
+        </d3-chart>
+      </div>
+    </div>
+  </article>
+</body>
+</html>
