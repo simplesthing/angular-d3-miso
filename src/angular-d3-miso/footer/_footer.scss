@@ -1,0 +1,10 @@
+.chart-footer {
+  padding: 20px 0;
+  margin: 20px 5px 0 ;
+  border-top: solid 1px $black;
+  em {
+    font-size: 11px;
+    color: $gray;
+    margin-top:.5em;
+  }
+}

@@ -45,7 +45,7 @@
         let width  = ctrl.config.width + ctrl.config.margin.left;
         let height = ctrl.config.height + ctrl.config.margin.top + ctrl.config.margin.bottom;
 
-        ctrl.config.svg = d3.select('#'+ ctrl.config.id)
+        ctrl.config.svg = d3.select('#'+ ctrl.config.id + ' > ' + ctrl.config.chart)
           .append('svg')
         .attr('width', width)
         .attr('height', height)

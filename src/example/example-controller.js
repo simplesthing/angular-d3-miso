@@ -3,34 +3,40 @@
     let model = this;
 
     model.people = {
-      title: 'Demo',
-      dataOptions: ['people', 'animals'],
-      width: 1,
-      height: 0.5,
+      title: '10 Influential People Who Never Existed',
+      footnote: 'Data examples were obtained from <a href="http://listverse.com/2008/11/03/top-10-influential-people-who-never-lived/" target="_blank">listverse.com</a>',
       offsetLeft: 200,
       xKey: 'name',
       yKey: 'rank',
-      classname: 'orange',
+      classname: 'orange'
+    };
+
+    model.animals = {
+      title:'10 Species That Are Surprisingly Ancient',
+      footnote: 'Data examples were obtained from <a href="http://listverse.com/2015/07/02/10-species-that-are-surprisingly-ancient/" target="_blank">listverse.com</a>',
+      offsetLeft: 140,
+      xKey: 'name',
+      yKey: 'years',
+      classname: 'green'
+    };
+
+
+    model.chart = {
+      chart: 'horizontal-bar',
+      dataOptions: ['people', 'animals'],
+      selected : 'people',
+      width: 1,
+      height: 0.5,
       update: function(config){
-        ExampleDataService.people().then(function(response){
-          model.people.data = response.data
+        model.chart = angular.extend(config, model[config.selected]);
+        console.log(model.chart)
+        ExampleDataService[config.selected]().then(function(response){
+          model.chart.data = response.data;
         });
       }
     };
 
-    model.animals = {
-      width: 1,
-      height: 0.5,
-      offsetLeft: 140,
-      xKey: 'name',
-      yKey: 'years',
-      classname: 'green',
-      update: function(config){
-        ExampleDataService.animals().then(function(response){
-          model.animals.data = response.data
-        });
-      }
-    };
+
   }
 
   ExampleController.$inject = ['ExampleDataService'];

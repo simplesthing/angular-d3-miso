@@ -1,6 +1,7 @@
 (function(window, angular, undefined){
   angular.module('angularD3Miso', [
     'd3Service',
-    'ngAria'
+    'ngAria',
+    'ngSanitize'
   ]);
 })(window, window.angular);

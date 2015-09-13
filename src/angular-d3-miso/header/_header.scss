@@ -2,14 +2,15 @@
   margin-bottom: 14px;
   border-bottom: 1px solid $black;
   .title {
-    width: 50%;
+    width: 60%;
     float:left;
     h1 {
+      font-size: 22px;
       margin-top:10px;
     }
   }
   .data-toggle {
-    width: 50%;
+    width: 40%;
     float:right;
     form {
       margin-top: 20px;

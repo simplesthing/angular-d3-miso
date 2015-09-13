@@ -6,11 +6,18 @@
       replace     : true,
       transclude  : true,
       scope       : true,
-      template    : '<div class="chart-header clearfix"><div class="title"><h1>{{title}}</h1></div><div class="data-toggle"><form class="form-inline"><div class="form-group><label for="data">Data Toggle</label>&nbsp;<select class="form-control"><option ng-repeat="opt in options">{{opt}}</option></select></div></form></div></div>',
+      template    : '<header class="chart-header clearfix"><div class="title"><h1>{{title}}</h1></div><div class="data-toggle"><form class="form-inline"><div class="form-group><label for="data">Data Toggle</label>&nbsp;<select class="form-control" ng-model="selected" name="data" ng-change="changeSelection()"><option ng-repeat="opt in options">{{opt}}</option></select></div></form></div></header>',
       link        : function(scope, elem, attr, ctrl){
-        // set directive specific scope variables
-        scope.title   = ctrl.config.title;
-        scope.options = ctrl.config.dataOptions;
+        scope.selected = ctrl.config.selected;
+        scope.changeSelection = function(){
+          ctrl.config.selected = scope.selected;
+          ctrl.config.update(ctrl.config);
+        };
+        function update() {
+          scope.title   = ctrl.config.title;
+          scope.options = ctrl.config.dataOptions;
+        }
+        ctrl.addUpdateListener(update.bind(this));
       }
     };
   }
