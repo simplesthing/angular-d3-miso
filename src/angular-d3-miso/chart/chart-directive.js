@@ -25,7 +25,7 @@
    * ChartService will handle general chart calculations,
    * ChartController will handle stateful chart functionality
    */
-  function chart(){
+  function chart(resize){
     return {
       replace          : true,
       controller       : 'ChartController',
@@ -58,12 +58,15 @@
             ctrl.notify('updates', ctrl.config);
           }
         });
-
+        scope.$on('resize', function($event, msg){
+         ctrl.calculateDimensions(ctrl.config);
+          ctrl.notify('updates', ctrl.config);
+        });
       }
     };
   }
 
-  chart.$inject = [];
+  chart.$inject = ['resize'];
 
   angular.module('angularD3Miso')
   .directive('d3Chart', chart);

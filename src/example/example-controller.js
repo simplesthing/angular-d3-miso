@@ -20,7 +20,6 @@
       classname: 'green'
     };
 
-
     model.chart = {
       chart: 'horizontal-bar',
       dataOptions: ['people', 'animals'],
@@ -29,7 +28,6 @@
       height: 0.5,
       update: function(config){
         model.chart = angular.extend(config, model[config.selected]);
-        console.log(model.chart)
         ExampleDataService[config.selected]().then(function(response){
           model.chart.data = response.data;
         });

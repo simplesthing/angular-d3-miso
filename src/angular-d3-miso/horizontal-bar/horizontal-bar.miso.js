@@ -2,11 +2,12 @@
 d3.chart('HorizontalBar', {
   initialize: function(config) {
     let chart = this;
-    let base = this.base.append('g')
-      .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
-
     chart.config = config;
     chart.config.parent = this;
+    chart.previousWidth = [];
+
+    let base = this.base.append('g')
+      .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
 
     this.layer('bars', base.append('g'), {
       dataBind: function(data){
@@ -18,19 +19,21 @@ d3.chart('HorizontalBar', {
       events: {
         'enter': function(){
           this.attr('transform', function(d, i) { return 'translate('+ chart.config.offsetLeft +',' + chart.y(i) + ')';})
-            .attr('width', 0)
+            .attr('width', function(d, i){
+              let width = chart.previousWidth[i] ? chart.previousWidth[i] : 0;
+              return width;
+            })
             .attr('height', chart.y.rangeBand())
-            .attr('class', config.classname)
-            .attr('opacity', 0);
+            .attr('class', config.classname);
         },
         'enter:transition': function(){
-          this.duration(1000)
-            .attr('width', function(d){return chart.x(d.y);})
-            .attr('opacity', 1);
-        },
-        'update:transition': function(){
-          this.duration(1000)
-            .attr('opacity', 1);
+          chart.previousWidth = [];
+          this.duration(500)
+            .attr('width', function(d){
+              let width = chart.x(d.y);
+              chart.previousWidth.push(width);
+              return width;
+            });
         },
         'exit': function(){
            this.remove();
@@ -60,21 +63,12 @@ d3.chart('HorizontalBar', {
           this.attr('transform', function(d,i) { return 'translate('+ chart.config.offsetLeft +',' + chart.y(i) + ')';})
             .attr('x', function(d) { return  chart.positionInnerLabel(d);})
             .attr('y', chart.y.rangeBand()/2)
-            .attr('dy', '.35em')
             .attr('fill', function(d){ return d.color; })
-            .attr('opacity', 1)
-            .text(function(d) { return d.y; });
+            .attr('dy', '.35em');
         },
         'enter:transition': function(){
-          this.duration(1000)
-            .attr('opacity', 1);
-        },
-        'update:transition': function(){
-          this.duration(1000)
-            .attr('x', function(d) { return  chart.positionInnerLabel(d);})
-            .attr('fill', function(d){ return d.color; })
-            .text(function(d) { return d.y; })
-            .attr('opacity', 1);
+          this.duration(500)
+            .text(function(d) { return d.y; });
         },
         'exit': function(){
            this.remove();
@@ -97,14 +91,6 @@ d3.chart('HorizontalBar', {
             .attr('dy', '.35em')
             .attr('opacity', 1)
             .text(function(d) { return d.x; });
-        },
-        'enter:transition': function(){
-          this.duration(1000).attr('opacity', 1);
-        },
-        'update:transition': function(){
-          this.duration(1000)
-            .text(function(d) { return d.x; })
-            .attr('opacity', 1);
         },
         'exit': function(){
            this.remove();

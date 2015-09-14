@@ -2,6 +2,9 @@
 body {
   width:100%;
   height:100%;
+  &>article.container {
+    margin-top: 15px;
+  }
 }
 
 html {
@@ -24,6 +27,9 @@ a, select {
   display: none !important;
 }
 
+.container {
+  min-width: 400px;
+}
 .clearfix:after {
   visibility: hidden;
   display: block;
