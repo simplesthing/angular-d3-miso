@@ -17,22 +17,24 @@ var defaultConfig = {
     ],
     js        : [
       'src/**/*.js',
-      '!src//**/*.spec.js',
-      '!src//**/*.mock.js'
+      '!src/**/*.spec.js',
+      '!src/**/*.mock.js'
+    ],
+    modulejs     : [
+      'src/angular-d3-miso/**/*.js',
+      '!src/angular-d3-miso/**/*.spec.js',
+      '!src/angular-d3-miso/**/*.mock.js'
     ],
     gulpjs       : ['gulpfile.js', './gulp/**/*.js'],
     sass         : ['src/example/styles/styles.scss'],
-    images       : ['src/example/images/**/*.*', '!src/example/images/sprites/*.*'],
+    sassdist     : ['src/angular-d3-miso/angular-d3-miso.scss'],
     assets       : [
       'src/**/*.*',
-      '!src/example/images/sprites/*.*',
       '!src/**/*.html',
       '!src/example/index.html',
       '!src/example/**/*.scss',
       '!src/**/*.js',
     ],
-    fonts        : ['./bower_components/fontawesome/fonts/**/*.*', './bower_components/bootstrap-sass-official/assets/fonts/**/*.*'],
-    sprites      : 'src/example/images/sprites/**/*.{png,jpg,gif}',
     log          : log,
     errorHandler : errorHandler,
     gitReporter  : gitReporter,

@@ -1,19 +1,18 @@
 'use strict';
-(function(window, angular, undefined){
-  function horizontalBar(){
+(function (window, angular, undefined) {
+  function horizontalBar() {
     return {
-      require : '^d3Chart',
-      link    : function(scope, elem, attr, ctrl){
+      require: '^d3Chart',
+      link: function link(scope, elem, attr, ctrl) {
         var chart;
         elem.addClass('horizontal-bar');
 
-        function init(){
+        function init() {
           // add chart to DOM
           chart = ctrl.config.svg.chart('HorizontalBar', ctrl.config);
-
         }
 
-        function update(config){
+        function update(config) {
           // draw chart
           chart.draw(config.data);
         }
@@ -29,6 +28,5 @@
 
   horizontalBar.$inject = [];
 
-  angular.module('angularD3Miso')
-  .directive('horizontalBar', horizontalBar);
+  angular.module('angularD3Miso').directive('horizontalBar', horizontalBar);
 })(window, window.angular);

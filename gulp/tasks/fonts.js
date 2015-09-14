@@ -10,10 +10,3 @@ gulp.task('fonts', function() {
   return gulp.src(config.fonts)
     .pipe(gulp.dest(config.build + '/fonts'));
 });
-
-gulp.task('fonts:dist', function() {
-  config.log('Copying fonts');
-
-  return gulp.src(config.fonts)
-    .pipe(gulp.dest(config.dist + '/fonts'));
-});

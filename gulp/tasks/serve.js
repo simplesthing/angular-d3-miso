@@ -19,17 +19,6 @@ function serveCallback() {
   });
 }
 
-function serveDistCallback() {
-  browserSync.instance = browserSync.init({
-      startPath: '/example/index.html',
-      notify  : false,
-      port    : 3000,
-      server: {
-        baseDir    : ['dist']
-      }
-  });
-}
-
 /**
  * Create a development build and serve files from /build
  */
@@ -38,7 +27,6 @@ gulp.task('serve', function(){
     'clean',
     'copy',
     ['wiredep', 'scripts'],
-    // 'images',
     'styles',
     'html',
     'inject',
@@ -46,25 +34,7 @@ gulp.task('serve', function(){
     serveCallback
   );
 });
+
 gulp.task('serve:build', function(){
   serveCallback();
-});
-
-/**
- * Create a production build and serve from /dist
- */
-gulp.task('serve:dist', function(){
-  runSequence(
-    'clean:dist',
-    'wiredep:dist',
-    // 'images:dist',
-    ['scripts:dist', 'styles:dist', 'html:dist', 'fonts:dist'],
-    'copy:dist',
-    'inject:dist',
-    serveDistCallback
-  );
-});
-
-gulp.task('serve:test', function(){
-  serveDistCallback();
 });

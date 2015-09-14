@@ -29,18 +29,4 @@ gulp.task('inject', function(){
           .pipe($.inject(series(miso, injects), config.inject))
           .pipe(gulp.dest(path.join(config.build, '/example')));
 });
-/**
- * Inject minifed vendor and app JS, CSS into /dist/index.html
- */
-gulp.task('inject:dist', function(){
-  config.log('Injecting assets');
 
-  var vendor = gulp.src([ path.join(config.dist, '/vendor/*.js'), path.join(config.dist, '/vendor/*.css')])
-        ;
-  var app    = gulp.src([path.join(config.dist, '/app/*.js'), path.join(config.dist, '/styles/**.css')]);
-
-  return  gulp
-          .src(config.index)
-          .pipe($.inject(series(vendor, app), config.inject))
-          .pipe(gulp.dest(config.dist));
-});

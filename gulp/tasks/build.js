@@ -11,21 +11,7 @@ gulp.task('build', function(){
   config.log('Building source --> /build');
 
   runSequence(
-    'clean',
-    ['scripts', 'styles', 'wiredep', 'images'],
-    'copy',
-    'inject'
-  );
-});
-
-
-gulp.task('testAndBuild', function(){
-  runSequence(
-    ['clean:dist', 'test'],
-    ['wiredep:dist','images:dist'],
-    ['scripts:dist', 'styles:dist', 'html:dist', 'fonts:dist', 'apti-status'],
-    'copy:dist',
-    'inject:dist',
-    'war'
+    'clean:dist',
+    ['scripts:dist', 'styles:dist']
   );
 });

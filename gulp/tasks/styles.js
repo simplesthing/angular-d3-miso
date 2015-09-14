@@ -30,14 +30,12 @@ gulp.task('styles', function(){
 gulp.task('styles:dist', function(){
   config.log('Compiling SASS --> minifed CSS');
 
-  return  gulp
-          .src(config.sass)
+  return gulp.src(config.sassdist)
           .pipe($.sourcemaps.init())
           .pipe($.sass()).on('error', config.errorHandler('Sass'))
           .pipe($.autoprefixer()).on('error', config.errorHandler('Autoprefixer'))
-          .pipe($.csso())
-          .pipe($.rev())
-          .pipe($.sourcemaps.write('../maps'))
-          .pipe(gulp.dest(path.join(config.dist, '/styles')))
+          // .pipe($.csso())
+          .pipe($.sourcemaps.write())
+          .pipe(gulp.dest(path.join(config.dist)))
           .pipe($.size({title:'styles', showFiles: true}));
 });

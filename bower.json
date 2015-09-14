@@ -1,6 +1,7 @@
 {
   "name": "angular-d3-miso",
   "version": "0.0.0",
+  "main": ["./dist/angular-d3-miso.js", "./dist/angular-d3-miso.css"],
   "authors": [
     "Ava Collins"
   ],

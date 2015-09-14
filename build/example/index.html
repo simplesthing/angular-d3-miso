@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Analytics dashboard application.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular D3 miso</title>
+
+  <!-- bower:css -->
+  <link rel='stylesheet' href='/bower_components/fontawesome/css/font-awesome.css' />
+  <!-- endbower -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- endinject -->
+
+</head>
+
+
+<body ng-app="angular-d3-miso-demo">
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/d3/d3.js"></script>
+  <script src="/bower_components/d3.chart/d3.chart.js"></script>
+  <script src="/bower_components/ng-resize/ngresize.js"></script>
+  <!-- endbower -->
+  <!-- inject:js -->
+  <script src="../angular-d3-miso/horizontal-bar/horizontal-bar.miso.js"></script>
+  <script src="../angular-d3-miso/angular-d3-miso.js"></script>
+  <script src="../angular-d3-miso/horizontal-bar/horizontal-bar-directive.js"></script>
+  <script src="../angular-d3-miso/header/header-directive.js"></script>
+  <script src="../angular-d3-miso/footer/footer-directive.js"></script>
+  <script src="../angular-d3-miso/chart/chart-directive.js"></script>
+  <script src="../angular-d3-miso/chart/chart-controller.js"></script>
+  <script src="app.js"></script>
+  <script src="example-data-service.js"></script>
+  <script src="example-controller.js"></script>
+  <script src="../angular-d3-miso/d3-service.js"></script>
+  <!-- endinject -->
+
+  <article ng-controller="ExampleController as ctrl" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <d3-chart id="top-10" config="ctrl.chart">
+          <chart-header></chart-header>
+          <horizontal-bar></horizontal-bar>
+          <chart-footer></chart-footer>
+        </d3-chart>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

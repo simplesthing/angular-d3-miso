@@ -39,8 +39,7 @@ gulp.task('jshint:gulp', function(){
 gulp.task('scripts:dist', function(){
   config.log('Linting, minifying and transpiling js');
 
-  return  gulp
-          .src(config.js)
+  return gulp.src(config.modulejs)
           .pipe($.jshint())
           .pipe($.jshint.reporter('jshint-stylish'))
           .pipe($.jshint.reporter('fail'))
@@ -52,14 +51,9 @@ gulp.task('scripts:dist', function(){
                   return 0;
                 }), $.angularFilesort())
           )
-
-          // .pipe()
-          .pipe($.concat('app.js'))
-          .pipe($.uglify({
-            mangle: false
-          })).on('error', config.errorHandler('Uglify'))
-          .pipe($.rev())
-          .pipe(gulp.dest(config.dist + '/app'))
+          .pipe($.concat('angular-d3-miso.js'))
+          // .pipe($.uglify()).on('error', config.errorHandler('Uglify'))
+          .pipe(gulp.dest(config.dist))
           .pipe($.size({title:'scripts', showFiles: true}));
 });
 /**
