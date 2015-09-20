@@ -12,8 +12,11 @@ var sort = require('sort-stream');
 gulp.task('inject', function(){
   config.log('Injecting assets');
 
+  var vendor = gulp
+                .src([config.build+'/vendor/**/*.js', config.build, '/vendor/**/*.css']);
+
   var miso    = gulp
-                .src([config.build + '/**/*.miso.js'])
+                .src([config.build + '/example/**/*.miso.js'])
                 .pipe(sort(function (a, b) {
                   if (a > b) {return 1;}
                   if (a < b) {return -1;}
@@ -21,12 +24,12 @@ gulp.task('inject', function(){
                 }));
 
   var injects = gulp
-                .src([config.build + '/**/*.js','!'+config.build + '/**/*.miso.js', config.build + '/**/*.css'])
+                .src([config.build + '/example/**/*.js','!'+config.build + '/example/**/*.miso.js', config.build + '/example/**/*.css'])
                 .pipe($.if('*.js', $.angularFilesort()).on('error', config.errorHandler('AngularFilesort')));
 
   return  gulp
           .src(path.join(config.build, '/example/index.html'))
-          .pipe($.inject(series(miso, injects), config.inject))
+          .pipe($.inject(series(vendor, miso, injects), config.inject))
           .pipe(gulp.dest(path.join(config.build, '/example')));
 });
 

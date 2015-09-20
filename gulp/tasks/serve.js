@@ -25,8 +25,9 @@ function serveCallback() {
 gulp.task('serve', function(){
   runSequence(
     'clean',
+    ['build', 'scripts'],
+    ['wiredep', ],
     'copy',
-    ['wiredep', 'scripts'],
     'styles',
     'html',
     'inject',

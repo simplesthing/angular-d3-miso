@@ -30,8 +30,6 @@ var defaultConfig = {
     sassdist     : ['src/angular-d3-miso/angular-d3-miso.scss'],
     assets       : [
       'src/**/*.*',
-      '!src/**/*.html',
-      '!src/example/index.html',
       '!src/example/**/*.scss',
       '!src/**/*.js',
     ],
@@ -39,7 +37,7 @@ var defaultConfig = {
     errorHandler : errorHandler,
     gitReporter  : gitReporter,
     inject       : {
-      ignorePath   : [ 'src', '../dist/' ],
+      // ignorePath   : [ 'src', '../dist/' ],
       addRootSlash : false,
       relative     : true
     },
