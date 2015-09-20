@@ -5249,7 +5249,7 @@ a, select {
   display: none !important; }
 
 .container {
-  min-width: 400px; }
+  width: 700px; }
 
 .clearfix:after {
   visibility: hidden;
