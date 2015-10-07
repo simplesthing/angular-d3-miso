@@ -18,7 +18,7 @@ gulp.task('watch', function(){
   .on('change',  $.memoryCache.update('styles'));
   // JS
   $.watch(config.js, {events: ['change']}, $.batch(function(events){
-    events.on(['change'], runSequence('scripts', reload));
+    events.on(['change'], runSequence('scripts:dist','scripts', 'copy', 'inject', reload));
   }));
   $.watch(config.js, {events: ['unlink', 'add']}, $.batch(function(events){
     events.on(['unlink','add'], runSequence( 'build'));

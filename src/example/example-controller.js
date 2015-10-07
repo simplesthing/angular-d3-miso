@@ -34,6 +34,23 @@
       }
     };
 
+    model.monsters = {
+      title: 'Ten Japanese Monsters That Will Kill You',
+      chart: 'horizontal-bar-extend',
+      footnote: '<h4>Click <a href="http://listverse.com/2015/09/13/10-japanese-monsters-that-will-kill-you/" target="_blank">here</a> for data source.</h4>',
+      width: 1,
+      height: 0.5,
+      offsetLeft: 200,
+      xKey: 'name',
+      yKey: 'rank',
+      classname: 'blue',
+      update: function(config){
+        ExampleDataService.monsters().then(function(response){
+          model.monsters.data = response.data;
+        });
+      }
+    }
+
 
   }
 

@@ -15,7 +15,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="dist/angular-d3-miso.css">
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="vendor/vendor-767d962976.css">
+  <link rel="stylesheet" href="vendor/vendor.css">
   <!-- endinject -->
 
 </head>
@@ -25,7 +25,7 @@
   <!-- bower:js -->
   <!-- endbower -->
   <!-- inject:js -->
-  <script src="vendor/vendor-4e83427c2a.js"></script>
+  <script src="vendor/vendor.js"></script>
   <script src="dist/angular-d3-miso.js"></script>
   <script src="app.js"></script>
   <script src="example-data-service.js"></script>
@@ -38,6 +38,18 @@
         <d3-chart id="top-10" config="ctrl.chart">
           <chart-header></chart-header>
           <horizontal-bar></horizontal-bar>
+          <chart-footer></chart-footer>
+        </d3-chart>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><br></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <d3-chart id="top-10-extend" config="ctrl.monsters">
+          <chart-header></chart-header>
+          <horizontal-bar-extend></horizontal-bar-extend>
           <chart-footer></chart-footer>
         </d3-chart>
       </div>

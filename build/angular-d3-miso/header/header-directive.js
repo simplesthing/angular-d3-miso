@@ -6,7 +6,7 @@
       replace: true,
       transclude: true,
       scope: true,
-      template: '<header class="chart-header clearfix"><div class="title"><h1>{{title}}</h1></div><div class="data-toggle"><form class="form-inline"><div class="form-group><label for="data">Data Toggle</label>&nbsp;<select class="form-control" ng-model="selected" name="data" ng-change="changeSelection()"><option ng-repeat="opt in options">{{opt}}</option></select></div></form></div></header>',
+      template: '<header class="chart-header clearfix"><div class="title"><h1>{{title}}</h1></div><div class="data-toggle" ng-show="selected"><form class="form-inline"><div class="form-group><label for="data">Data Toggle</label>&nbsp;<select class="form-control" ng-model="selected" name="data" ng-change="changeSelection()"><option ng-repeat="opt in options">{{opt}}</option></select></div></form></div></header>',
       link: function link(scope, elem, attr, ctrl) {
         scope.selected = ctrl.config.selected;
         scope.changeSelection = function () {

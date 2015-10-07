@@ -2,7 +2,6 @@
 
 var config  = require('../config');
 var gulp    = require('gulp');
-var wiredep = require('wiredep').stream;
 var $       = require('gulp-load-plugins')({lazy: true});
 var path    = require('path');
 var _       = require('lodash');
@@ -31,7 +30,7 @@ gulp.task('wiredep', function(){
           .pipe($.concat('vendor.css'))
           .pipe($.csso()).on('error', config.errorHandler('CSSO'))
           .pipe(cssFilter.restore())
-          .pipe($.rev())
+          // .pipe($.rev())
           .pipe(gulp.dest(path.join(config.build, '/example/vendor')));
 });
 
