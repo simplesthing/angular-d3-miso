@@ -144,8 +144,67 @@ d3.chart('HorizontalBar', {
   }
 });
 'use strict';
+d3.chart('HorizontalBar').extend('HorizontalBarExtend', {
+  initialize: function initialize(config) {
+    var chart = this;
+
+    function barsEnter() {
+      this.attr('transform', function (d, i) {
+        return 'translate(20,' + chart.y(i) + ')';
+      });
+    }
+    this.layer('bars').on('enter', barsEnter);
+
+    function innerLabelsEnter() {
+      this.attr('transform', function (d, i) {
+        return 'translate(0,' + chart.y(i) + ')';
+      }).attr('x', 0).attr('fill', '#000000').attr('text-anchor', 'start');
+    }
+    this.layer('innerLabels').on('enter', innerLabelsEnter);
+
+    function outerLabelsEnter() {
+      this.attr('transform', function (d, i) {
+        return 'translate(' + (chart.positionInnerLabel(d) + 50) + ',' + chart.y(i) + ')';
+      });
+    }
+    this.layer('outerLabels').on('enter', outerLabelsEnter);
+  }
+});
+'use strict';
 (function (window, angular, undefined) {
   angular.module('angularD3Miso', ['d3Service', 'ngAria', 'ngSanitize', 'ngResize']);
+})(window, window.angular);
+'use strict';
+(function (window, angular, undefined) {
+  function horizontalBarExtend() {
+    return {
+      require: '^d3Chart',
+      link: function link(scope, elem, attr, ctrl) {
+        var chart;
+        elem.addClass('horizontal-bar-extend');
+
+        function init() {
+          // add chart to DOM
+          chart = ctrl.config.svg.chart('HorizontalBarExtend', ctrl.config);
+        }
+
+        function update(config) {
+          // draw chart
+          chart.draw(config.data);
+        }
+
+        // add event listeners
+        ctrl.addInitListener(init.bind(this));
+        ctrl.addUpdateListener(update.bind(this));
+        // get data
+        ctrl.config.update(ctrl.config);
+      }
+    };
+  }
+
+  horizontalBarExtend.$inject = [];
+
+  angular.module('angularD3Miso').directive('horizontalBarExtend', horizontalBarExtend);
 })(window, window.angular);
 'use strict';
 (function (window, angular, undefined) {
@@ -181,33 +240,6 @@ d3.chart('HorizontalBar', {
 })(window, window.angular);
 'use strict';
 (function (window, angular, undefined) {
-  function header() {
-    return {
-      require: '^d3Chart',
-      replace: true,
-      transclude: true,
-      scope: true,
-      template: '<header class="chart-header clearfix"><div class="title"><h1>{{title}}</h1></div><div class="data-toggle"><form class="form-inline"><div class="form-group><label for="data">Data Toggle</label>&nbsp;<select class="form-control" ng-model="selected" name="data" ng-change="changeSelection()"><option ng-repeat="opt in options">{{opt}}</option></select></div></form></div></header>',
-      link: function link(scope, elem, attr, ctrl) {
-        scope.selected = ctrl.config.selected;
-        scope.changeSelection = function () {
-          ctrl.config.selected = scope.selected;
-          ctrl.config.update(ctrl.config);
-        };
-        function update() {
-          scope.title = ctrl.config.title;
-          scope.options = ctrl.config.dataOptions;
-        }
-        ctrl.addUpdateListener(update.bind(this));
-      }
-    };
-  }
-  header.$inject = [];
-
-  angular.module('angularD3Miso').directive('chartHeader', header);
-})(window, window.angular);
-'use strict';
-(function (window, angular, undefined) {
   function footer() {
     return {
       require: '^d3Chart',
@@ -226,6 +258,33 @@ d3.chart('HorizontalBar', {
   footer.$inject = [];
 
   angular.module('angularD3Miso').directive('chartFooter', footer);
+})(window, window.angular);
+'use strict';
+(function (window, angular, undefined) {
+  function header() {
+    return {
+      require: '^d3Chart',
+      replace: true,
+      transclude: true,
+      scope: true,
+      template: '<header class="chart-header clearfix"><div class="title"><h1>{{title}}</h1></div><div class="data-toggle" ng-show="selected"><form class="form-inline"><div class="form-group><label for="data">Data Toggle</label>&nbsp;<select class="form-control" ng-model="selected" name="data" ng-change="changeSelection()"><option ng-repeat="opt in options">{{opt}}</option></select></div></form></div></header>',
+      link: function link(scope, elem, attr, ctrl) {
+        scope.selected = ctrl.config.selected;
+        scope.changeSelection = function () {
+          ctrl.config.selected = scope.selected;
+          ctrl.config.update(ctrl.config);
+        };
+        function update() {
+          scope.title = ctrl.config.title;
+          scope.options = ctrl.config.dataOptions;
+        }
+        ctrl.addUpdateListener(update.bind(this));
+      }
+    };
+  }
+  header.$inject = [];
+
+  angular.module('angularD3Miso').directive('chartHeader', header);
 })(window, window.angular);
 'use strict';
 (function (window, angular, undefined) {
