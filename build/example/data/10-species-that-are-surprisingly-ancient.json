@@ -1,32 +1,42 @@
 [{
   "name": "White-Tailed Deer",
-  "years": 3.5
+  "years": "3.5 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/whitetaileddeer-e1435291919470.jpg"
 },{
   "name": "Zebra",
-  "years": 4
+  "years": "4 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/zebras-e1435291929424.jpg"
 },{
   "name": "Red Panda",
-  "years":  5
+  "years":  "5 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/redpanda-e1435291946525.jpg"
 },{
   "name": "Sandhill Crane",
-  "years":  10
+  "years":  "10 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/sandhillcranes-e1435291955500.jpg"
 },{
   "name": "Hedgehog",
-  "years":  15
+  "years":  "15 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/easterneuropeanhedgehog-e1435291962647.jpg"
 },{
   "name": "Flamingo",
-  "years": 18
+  "years": "18 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/flamingos-e1435291972506.jpg"
 },{
   "name": "Ardvark",
-  "years":  35
+  "years":  "35 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/aardvark-e1435291980145.jpg"
 },{
   "name": "Virginia Opossum",
-  "years":  70
+  "years":  "70 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/virginiaopossum-e1435291988460.jpg"
 },{
   "name": "Indian Purple Frog",
-  "years":  134
+  "years":  "134 million years",
+  "image": "http://culture4all.org/wp-content/uploads/2013/09/4155.jpg"
 },{
   "name": "Ginkgo Biloba",
-  "years":  200
+  "years":  "200 million years",
+  "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/ginkgobiloba-e1435291996338.jpg"
 }
 ]

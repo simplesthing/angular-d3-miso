@@ -1,42 +1,52 @@
 [
     {
         "name": "Yuki Onna",
-        "rank": 1
+        "rank": 1,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/10-ushi-ono.jpg"
     },
     {
         "name": "Katakirauwa",
-        "rank": 2
+        "rank": 2,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/9-shuten-doji.jpg"
     },
     {
         "name": "Yamata-no-Orochi",
-        "rank": 3
+        "rank": 3,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/8-otoroshi.jpg"
     },
     {
         "name": "The Akkorokamui",
-        "rank": 4
+        "rank": 4,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/7-ikuchi.jpg"
     },
     {
         "name": "The Gashadokuro",
-        "rank": 5
+        "rank": 5,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/6-mikoshi-nyudo.jpg"
     },
     {
         "name": "Mikoshi-Nyudo",
-        "rank": 6
+        "rank": 6,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/5-gashadokuro.jpg"
     },
     {
         "name": "Ikuchi",
-        "rank": 7
+        "rank": 7,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/4-akkorokamui.jpg"
     },
     {
         "name": "Otoroshi",
-        "rank": 8
+        "rank": 8,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/3-yamata-no-orochi.jpg"
     },
     {
         "name": "Shuten Doji",
-        "rank": 9
+        "rank": 9,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/2-katakirauwa.jpg"
     },
     {
         "name": "Ushi-Oni",
-        "rank": 10
+        "rank": 10,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/1-yuki-onna.jpg"
     }
 ]
