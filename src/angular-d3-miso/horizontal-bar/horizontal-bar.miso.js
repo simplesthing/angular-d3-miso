@@ -2,9 +2,9 @@
 d3.chart('HorizontalBar', {
   initialize: function(config) {
     let chart = this;
-    chart.config = config;
-    chart.config.parent = this;
-    chart.previousWidth = [];
+    this.config = config;
+    this.config.parent = this;
+    this.previousWidth = [];
 
     let base = this.base.append('g')
       .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
@@ -41,7 +41,7 @@ d3.chart('HorizontalBar', {
       }
     });
 
-    chart.positionInnerLabel = function(d) {
+    this.positionInnerLabel = function(d) {
       let rectWidth = chart.x(d.y) ;
       let charWidth = 12;
       let margin    = 3;
