@@ -1,42 +1,52 @@
 [
     {
         "name": "Santa Claus",
-        "rank": 10
+        "rank": 10,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/santaclaus.jpg"
     },
     {
         "name": "Barbie",
-        "rank": 9
+        "rank": 9,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/holidaybarbie07cl.jpg"
     },
     {
         "name": "Robin Hood",
-        "rank": 8
+        "rank": 8,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/robin460-tm.jpg"
     },
     {
         "name": "Cowboys",
-        "rank": 7
+        "rank": 7,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/cowboyonhorse-tm.jpg"
     },
     {
         "name": "The Marlboro Man",
-        "rank": 6
+        "rank": 6,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/marlboro-man-tm.jpg"
     },
     {
         "name": "Rosie the Riveter",
-        "rank": 5
+        "rank": 5,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/1941-rosie1-tm.jpg"
     },
     {
         "name": "Daedalus and Icarus",
-        "rank": 4
+        "rank": 4,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/daedalus-icarus-l-tm.jpg"
     },
     {
         "name": "The Little Engine That Could",
-        "rank": 3
+        "rank": 3,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/lilebook-tm.jpg"
     },
     {
         "name": "Big Brother",
-        "rank": 2
+        "rank": 2,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/big-brother-theater-tm.jpg"
     },
     {
         "name": "Romeo and Juliet",
-        "rank": 1
+        "rank": 1,
+        "image": "http://listverse.wpengine.netdna-cdn.com/wp-content/uploads/2008/11/romeo-juliet-1996-1200-l-tm.jpg"
     }
 ]
