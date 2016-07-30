@@ -5,18 +5,6 @@ Angular D3 chart directives made with the miso d3.chart library.
 
 ![Example Chart](https://cloud.githubusercontent.com/assets/1259113/9982701/60ed4050-5f99-11e5-945c-b5a9e6092a14.png)
 
-## Installing
-
-You can install angular-d3-miso via [bower](http://bower.io) by running:
-
-    $ bower install angular-d3-miso
-
-
-You can also install it via [npm](http://npmjs.org) by running:
-
-    $ npm install anglar-d3-miso
-
-
 ## About
 
 The purpose of this module is to demonstrate how to create a configurable and reusable D3 chart using Angular directives for composition and data retrieval and [miso d3.chart](http://misoproject.com/d3-chart/) library for creating extensible D3 visualizations. The reason modules like this are necessary is because both Angular and D3 have their own DOM updating patterns which do not play well with one another out if the box. It is a trivial task to include a D3 chart into an angular application, but responding to data and DOM events can be tedious if you are having to manually connect those updates between the angular digest cycle and d3's event hooks. 
